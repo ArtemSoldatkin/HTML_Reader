@@ -67,7 +67,6 @@ class HTMLReader:
             elif self.tag == '>':
                 self.isValue = True
                 tag = self.get_tag()
-                print("TAG", tag)
                 if tag != '<':
                     self.tree.set_value(tag)
                     self.isValue = False
@@ -77,11 +76,6 @@ class HTMLReader:
 
             elif not self.isValue:
                 self.tree.add_attribute(self.tag, self.get_tag())
-            '''
-            elif self.isValue:
-                self.tree.set_value(self.tag)
-                self.isValue = False
-            '''
             self.tag = self.get_tag()
 
 
