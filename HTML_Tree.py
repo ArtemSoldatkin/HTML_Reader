@@ -39,7 +39,9 @@ class HTMLTree:
     def set_value(self, value):
         if len(self.tree) > 0:
             node = self.tree[-1]
-            node.tag.value = value
+            if node.tag.value:
+                return
+            node.tag.set_value(value)
 
     def close_node(self):
         node = self.backward()

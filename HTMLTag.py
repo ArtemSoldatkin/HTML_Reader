@@ -9,6 +9,9 @@ class HTMLTag:
     def add_attribute(self, key, value):
         self.attribute[key] = value
 
+    def set_value(self, value):
+        self.value = value
+
     def append_child(self, child):
         self.children.append(child)
 
